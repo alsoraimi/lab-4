@@ -10,6 +10,16 @@ namespace lab4
     {
         static void Main(string[] args)
         {
+            int Num = int.Parse(Console.ReadLine());              //name integers
+            int result = Num;                                     //user input                      
+
+            for (int i = 0; i < Num; i++)
+            {
+                
+            }
+
+
+
         }
     }
 }
