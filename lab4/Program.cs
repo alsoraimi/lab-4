@@ -10,21 +10,31 @@ namespace lab4
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("please enter an integer thats greater than 0 but less than 10.");
 
-
-            int Num = int.Parse(Console.ReadLine());              //name integers
-            int result = Num;                                     //user input                      
-
-            for (int i = 1; i < Num; i++)       // input loop
+            bool askToContinue = false;
+            do
             {
-                result = result * i;
-                Console.WriteLine("{0}*{1}", Num, i);
-            }
-            Console.WriteLine(result);
+                Console.WriteLine("please enter an integer thats greater than 0 but less than 10.");
 
 
+                int Num = int.Parse(Console.ReadLine());              //name integers
+                int result = Num;                                     //user input                      
 
+                for (int i = 1; i < Num; i++)       // input loop
+                {
+                    result = result * i;
+                    Console.WriteLine("{0}*{1}", Num, i);
+                }
+                Console.WriteLine("the factorial of {0} is {1}", Num, result);
+
+                Console.WriteLine("do you want to try again, ?" + " " + "(Y/N)"); // add user input if they want to try again
+                if (Console.ReadLine().ToUpper() == "Y")
+                    askToContinue = true;
+                else
+                {
+                    return;
+                }
+            } while (askToContinue);
         }
     }
 }
