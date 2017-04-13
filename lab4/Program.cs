@@ -47,7 +47,7 @@ namespace lab4
             int input;
 
 
-            Console.WriteLine("please enter an integer: ");
+            Console.WriteLine("please enter an integer that is greater than 0 but less than 10: ");
 
 
             while (!int.TryParse(Console.ReadLine(), out input))
