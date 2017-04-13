@@ -13,11 +13,13 @@ namespace lab4
 
             bool askToContinue = false;
             do
+
             {
-                Console.WriteLine("please enter an integer thats greater than 0 but less than 10.");
+                //Console.WriteLine("please enter an integer thats greater than 0 but less than 10.");
 
+             //  Console.WriteLine(GetValidInteger());
 
-                int Num = int.Parse(Console.ReadLine());              //name integers
+                int Num = GetValidInteger();              //name integers
                 int result = Num;                                     //user input                      
 
                 for (int i = 1; i < Num; i++)       // input loop
@@ -32,9 +34,28 @@ namespace lab4
                     askToContinue = true;
                 else
                 {
+                    Console.WriteLine("thanks for trying!");
                     return;
                 }
             } while (askToContinue);
+        }
+
+
+        public static int GetValidInteger()           //add method for validation and input
+        {
+
+            int input;
+
+
+            Console.WriteLine("please enter an integer: ");
+
+
+            while (!int.TryParse(Console.ReadLine(), out input))
+            {
+                Console.WriteLine("input is not an integer, please enter an integer!");
+
+            }
+            return input;
         }
     }
 }
